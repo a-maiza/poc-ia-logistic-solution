@@ -1,0 +1,25 @@
+services:
+  postgres:
+    image: ankane/pgvector
+    container_name: ai-logistics-postgres
+    environment:
+      POSTGRES_DB: logistics
+      POSTGRES_USER: logistics
+      POSTGRES_PASSWORD: logistics
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./infra/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+
+  app:
+    build: .
+    container_name: ai-logistics-app
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/logistics
+      SPRING_DATASOURCE_USERNAME: logistics
+      SPRING_DATASOURCE_PASSWORD: logistics
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres

@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ai-logistics-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ai-logistics-app
+  template:
+    metadata:
+      labels:
+        app: ai-logistics-app
+    spec:
+      containers:
+        - name: app
+          image: ai-logistics-triage-java:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          env:
+            - name: OPENAI_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: openai-secret
+                  key: OPENAI_API_KEY
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:postgresql://postgres:5432/logistics
+            - name: SPRING_DATASOURCE_USERNAME
+              value: logistics
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: logistics

@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: ai-logistics-triage-java
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/logistics}
+    username: ${SPRING_DATASOURCE_USERNAME:logistics}
+    password: ${SPRING_DATASOURCE_PASSWORD:logistics}
+    driver-class-name: org.postgresql.Driver
+
+openai:
+  api-key: ${OPENAI_API_KEY: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}
+  chat-model: ${OPENAI_CHAT_MODEL:gpt-4o-mini}
+  embedding-model: ${OPENAI_EMBEDDING_MODEL:text-embedding-3-small}
+
+server:
+  port: 8081

@@ -1,0 +1,81 @@
+cases:
+  - id: 1
+    incidentText: "Truck arrival delayed by 8 hours due to traffic."
+    expectedSeverity: medium
+    expectedType: delay
+  - id: 2
+    incidentText: "Container damaged during unloading, multiple cartons crushed."
+    expectedSeverity: high
+    expectedType: damage
+  - id: 3
+    incidentText: "Warehouse at 98% capacity and inbound trailers queued."
+    expectedSeverity: high
+    expectedType: capacity
+  - id: 4
+    incidentText: "Customs flagged shipment for missing HS code."
+    expectedSeverity: medium
+    expectedType: customs
+  - id: 5
+    incidentText: "Routing API outage causing failed route assignments."
+    expectedSeverity: critical
+    expectedType: routing
+  - id: 6
+    incidentText: "Minor scan mismatch on one pallet label."
+    expectedSeverity: low
+    expectedType: other
+  - id: 7
+    incidentText: "Port closure due to weather with 2-day delay expected."
+    expectedSeverity: high
+    expectedType: delay
+  - id: 8
+    incidentText: "Cold-chain sensor indicates temperature breach for pharma cargo."
+    expectedSeverity: critical
+    expectedType: damage
+  - id: 9
+    incidentText: "Carrier no-show for scheduled pickup."
+    expectedSeverity: medium
+    expectedType: delay
+  - id: 10
+    incidentText: "Cross-dock line shortage leading to throughput bottleneck."
+    expectedSeverity: medium
+    expectedType: capacity
+  - id: 11
+    incidentText: "Customs inspection hold exceeds SLA by 36 hours."
+    expectedSeverity: high
+    expectedType: customs
+  - id: 12
+    incidentText: "GPS deviation detected from approved route corridor."
+    expectedSeverity: high
+    expectedType: routing
+  - id: 13
+    incidentText: "Packaging tear discovered on non-fragile goods."
+    expectedSeverity: low
+    expectedType: damage
+  - id: 14
+    incidentText: "Regional strike reducing truck availability by 40%."
+    expectedSeverity: high
+    expectedType: capacity
+  - id: 15
+    incidentText: "Transit delay expected because of bridge maintenance."
+    expectedSeverity: medium
+    expectedType: delay
+  - id: 16
+    incidentText: "Incorrect consignee address in customs declaration."
+    expectedSeverity: medium
+    expectedType: customs
+  - id: 17
+    incidentText: "Reefer unit failure and temperature rising."
+    expectedSeverity: critical
+    expectedType: damage
+  - id: 18
+    incidentText: "Optimizer generated impossible route with prohibited roads."
+    expectedSeverity: high
+    expectedType: routing
+  - id: 19
+    incidentText: "Temporary labor shortage at sorting center."
+    expectedSeverity: medium
+    expectedType: capacity
+  - id: 20
+    incidentText: "Unknown issue reported by driver with unclear symptoms."
+    expectedSeverity: low
+    expectedType: other

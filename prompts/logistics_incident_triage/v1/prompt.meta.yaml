@@ -1,0 +1,7 @@
+name: logistics_incident_triage
+version: v1
+owner: logistics-ai-team
+last_updated: 2026-01-01
+model_target: gpt-4o-mini
+schema: src/main/resources/schema/triage_output.schema.json
+description: Triage logistics incidents into severity, type, and actions.
